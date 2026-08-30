@@ -46,7 +46,36 @@ namespace Lab02
 
             //Part B
 
+            string bossName = "Animan";
+            char rank = 'A';
+            int level = 6;
+            int maxHp = 200;
+            int currentHp = 150;
+            float attackPower = 40.5f;
+            double critMultiplier = 1.25;
+            bool isBoss = true;
 
+            Console.WriteLine("===== BOSS STATUS: INITIAL =====");
+            Console.WriteLine($"Name: {bossName}");
+            Console.WriteLine($"Rank: {rank}");
+            Console.WriteLine($"HP: {currentHp} / {maxHp}");
+            Console.WriteLine($"Attack power: {attackPower}");
+            Console.WriteLine($"Critmultiplier: {critMultiplier}");
+            Console.WriteLine($"Is boss: {isBoss}");
+
+            Console.WriteLine();
+
+            int hpPercent = currentHp * 100 / maxHp;
+            Console.WriteLine($"HP Percent: {hpPercent}%");
+            Console.WriteLine();
+            Console.WriteLine("Animan takes 60 damage!");
+            Console.WriteLine();
+
+            currentHp = currentHp - 60;
+            Console.WriteLine("===== BOSS STATUS: AFTER DAMAGE =====");
+            Console.WriteLine($"HP: {currentHp} / {maxHp}");
+            hpPercent = currentHp * 100 / maxHp;
+            Console.WriteLine($"HP Percent: {hpPercent}%");
 
 
         }
