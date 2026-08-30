@@ -46,26 +46,26 @@ namespace Lab02
 
             //Part B
 
-            string bossName = "Animan";
-            char rank = 'A';
-            int level = 6;
-            int maxHp = 200;
-            int currentHp = 150;
-            float attackPower = 40.5f;
-            double critMultiplier = 1.25;
-            bool isBoss = true;
+            string Name = "Animan";
+            char Stage = 'A';
+            int mastery = 6;
+            int MAXHp = 200;
+            int currentHP = 150;
+            float ATK = 40.5f;
+            double critRate = 2.25;
+            bool isMonster = true;
 
             Console.WriteLine("===== BOSS STATUS: INITIAL =====");
-            Console.WriteLine($"Name: {bossName}");
-            Console.WriteLine($"Rank: {rank}");
-            Console.WriteLine($"HP: {currentHp} / {maxHp}");
-            Console.WriteLine($"Attack power: {attackPower}");
-            Console.WriteLine($"Critmultiplier: {critMultiplier}");
-            Console.WriteLine($"Is boss: {isBoss}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Rank: {mastery}");
+            Console.WriteLine($"HP: {MAXHp} / {currentHP}");
+            Console.WriteLine($"Attack power: {ATK}");
+            Console.WriteLine($"Crit rate: {critRate}");
+            Console.WriteLine($"Is monster: {isMonster}");
 
             Console.WriteLine();
 
-            int hpPercent = currentHp * 100 / maxHp;
+            hpPercent = currentHp * 100 / maxHp;
             Console.WriteLine($"HP Percent: {hpPercent}%");
             Console.WriteLine();
             Console.WriteLine("Animan takes 60 damage!");
