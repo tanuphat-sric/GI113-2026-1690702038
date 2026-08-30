@@ -57,9 +57,9 @@ namespace Lab02
 
             Console.WriteLine("===== BOSS STATUS: INITIAL =====");
             Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Rank: {mastery}");
+            Console.WriteLine($"Stage: {Stage}");
             Console.WriteLine($"HP: {MAXHp} / {currentHP}");
-            Console.WriteLine($"Attack power: {ATK}");
+            Console.WriteLine($"ATK: {ATK}");
             Console.WriteLine($"Crit rate: {critRate}");
             Console.WriteLine($"Is monster: {isMonster}");
 
