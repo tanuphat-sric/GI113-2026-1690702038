@@ -1,0 +1,69 @@
+/*
+* Student ID :1690702038
+* Name       :Tanuphat
+* Section    :129C
+* No.        :N/A
+* Course     : GI113 Computer Programming (GI)
+*/
+
+namespace Lab05
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Game title, Sub-title
+            Console.WriteLine("==>>MY GAME KAK <<=");
+            Console.WriteLine("Hero vs. Monster, Fight damage calculator\n");
+
+            //Hero stats input HP DMG DEF
+            Console.Write("Hero Health: ");
+            bool heroHpOk = int.TryParse(Console.ReadLine(), out int heroHp);
+            Console.Write("Hero Attack: ");
+            bool heroAtkOk = int.TryParse(Console.ReadLine(), out int heroAtk);
+            Console.Write("Hero Defense: ");
+            bool heroDefOk = int.TryParse(Console.ReadLine(), out int herodef);
+
+            //Monster stats input
+            Console.Write("Monster Health: ");
+            bool monHpOk = int.TryParse(Console.ReadLine(), out int monHp);
+            Console.Write("mon Attack: ");
+            bool monAtkOk = int.TryParse(Console.ReadLine(), out int monAtk);
+            Console.Write("mon Defense: ");
+            bool monDefOk = int.TryParse(Console.ReadLine(), out int mondef);
+
+            //Input validation
+            bool isHeroIntValid = heroHpOk && heroAtkOk && heroDefOk;
+            bool isMonIntValid =monHpOk && monAtkOk && monDefOk;
+            Console.WriteLine($"\nHERO STATUS VALID: {isHeroIntValid}");
+            Console.WriteLine($"MONSTER STATUS VALID: {isMonIntValid}");
+
+            Console.WriteLine($"[HERO]          HP: {heroHp} ATK: {heroAtk} DEF: {herodef}");
+            Console.WriteLine($"[MONSTER]      HP: {monHp} ATK: {monAtk} DEF: {mondef}");
+            //
+            //
+
+            //Compound assignment : +-
+            int potionHeal = 8;
+            //heroHp = heroHp + potionHeal;
+            heroHp += potionHeal;
+            Console.WriteLine($"\nHero drink potion , healing {potionHeal} HP. Hero HP now {heroHp} HP");
+
+            //Arithetic +
+            int normDmg = Math.Max(0, heroAtk - mondef);
+            Console.WriteLine($"\nNormal Attack would deal: {normDmg} DMG");
+
+            //Precedence
+            int pwrDmg = Math.Max(0, (heroAtk * 2) - mondef);
+            Console.WriteLine($"Power Attack would deal: {pwrDmg} DMG");
+
+            //Random, Simple percent of critical chance
+            Random rng = new Random();
+            int roll = rng.Next(1, 101); //ต้อง+1ค่ามากสุดเสมอ เช่น 100 ต้อง 101
+            bool isCrit = roll <= 10; //10% chance จาก 100
+            int critDmg = normDmg + Convert.ToInt32(isCrit) * normDmg;
+            Console.WriteLine($"\nCritical hit roll: {roll} (critical: {isCrit}");
+            Console.WriteLine($"If critical, normal attack would instead deal: {critDmg}");
+        }
+    }
+}
